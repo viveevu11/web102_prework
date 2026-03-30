@@ -26,6 +26,23 @@ body {
 
 }
 
+.search-container {
+    margin: 20px, 0;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    font-family: "Cabin";
+    padding: 1%;
+    width: 50%;
+    border-radius: 7px;
+}
+
+input:hover {
+    box-shadow: 0 0 30px lightblue;
+}
+
 .stats-container:hover {
     box-shadow: 0 0 30px lightblue;
 }

@@ -5,6 +5,7 @@
 */
 
 // import the JSON data about the crowd funded games from the games.js file
+import games from './games.js';
 import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
@@ -183,3 +184,19 @@ firstGameContainer.appendChild(firstGameElement);
 const secondGameElement = document.createElement("p");
 secondGameElement.innerHTML = secondGame.name;
 secondGameContainer.appendChild(secondGameElement);
+
+/*************************************************************************************/
+// Add a search bar to filter games by name
+// Add a search bar to filter games by name
+const searchBar = document.getElementById("search-bar");
+
+searchBar.addEventListener("input", (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+
+    const filteredGames = GAMES_JSON.filter((game) => {
+        return game.name.toLowerCase().includes(searchTerm);
+    });
+
+    deleteChildElements(gamesContainer);
+    addGamesToPage(filteredGames);
+});
